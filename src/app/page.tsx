@@ -32,9 +32,34 @@ export default function HomePage() {
 
 
   return (
-    <main className="bg-white">
-    <code>{JSON.stringify(users, null, 2)}</code>
-    </main>
+     <main className="bg-white p-6">
+    <div className="overflow-x-auto">
+      <table className="min-w-full border-collapse border border-gray-300">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold ">ID</th>
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold">Name</th>
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold">Email</th>
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold">Address</th>
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold">createdAt</th>
+            <th className="border border-gray-300 px-4 py-2 text-center font-semibold">updatedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users?.map((user) => (
+            <tr key={user.id || Math.random()} className="hover:bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">{user.id}</td>
+              <td className="border border-gray-300 px-4 py-2">{user.name}</td>
+              <td className="border border-gray-300 px-4 py-2">{user.email}</td>
+              <td className="border border-gray-300 px-4 py-2">{user.address}</td>
+              <td className="border border-gray-300 px-4 py-2">{user.createdAt}</td>
+              <td className="border border-gray-300 px-4 py-2">{user.updatedAt}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </main>
   );
 
 }

@@ -19,9 +19,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-    <main>
-      <h1 className="text-3xl font-bold underline">
-        laukathdreijohn's Create T3 App
+    <main className="text-center p-6">
+      <h1 className="text-3xl font-semibold ">
+        Datebase
       </h1>
     </main>
       <body>{children}</body>
