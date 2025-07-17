@@ -32,7 +32,7 @@ export default function HomePage() {
 
 
   return (
-     <main className="bg-white p-6">
+ <main className="bg-white p-6">
     <div className="overflow-x-auto">
       <table className="min-w-full border-collapse border border-gray-300">
         <thead>
@@ -46,9 +46,9 @@ export default function HomePage() {
           </tr>
         </thead>
         <tbody>
-          {users?.map((user) => (
-            <tr key={user.id || Math.random()} className="hover:bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">{user.id}</td>
+          {users?.map((user, index) => (
+            <tr key={user.id || index + 1} className="hover:bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">{user.id ? (index + 1) : (index + 1)}</td>
               <td className="border border-gray-300 px-4 py-2">{user.name}</td>
               <td className="border border-gray-300 px-4 py-2">{user.email}</td>
               <td className="border border-gray-300 px-4 py-2">{user.address}</td>
